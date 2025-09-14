@@ -1,27 +1,30 @@
+//Библиотека dotenv и express
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 
+//Создание экземпляра express
 const app = express()
 
+//Настройка(отключение) CORS
+app.use(cors())
+//Настройка сервера для работы с json
 app.use(express.json())
 
-// const errorHandler = require('./errorHandler')
-
+//Подключение роутов
 const usersRoutes = require('./routes/user.routes')
 
-const port = 3000
+const errorHandler = require('./errorHandler')
 
+const PORT = process.env.PORT || 4000
+
+//Подключение роутов
 app.use('/api', usersRoutes)
 
-function errorHandler(err, req, res, next) {
-    res.status(err.status || 500).json({
-        status: err.status || 500,
-        message: err.message || 'Внутренняя ошибка сервера',
-    })
-}
-
+//Подключение обработчика ошибок
 app.use(errorHandler)
 
-app.listen(port, () => {
-    console.log('Server start')
+//Запуск сервера
+app.listen(PORT, () => {
+    console.log(`Server start on port ${PORT}`)
 })
