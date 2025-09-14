@@ -1,3 +1,6 @@
+[![Node](https://img.shields.io/badge/node-22.12.0-green.svg)](https://nodejs.org/)
+[![npm](https://img.shields.io/badge/npm-10.9.0-red.svg)](https://www.npmjs.com/)
+
 # Тестовый сервер на Node.JS
 
 ## Подготовка
@@ -7,7 +10,8 @@
 -   Node.JS
 -   NPM
 -   MySQL
-    Для Node.JS и NPM можно использовать NVM. NVM - программа, чтобы переключаться между различными версиями Node.JS.
+
+Для Node.JS и NPM можно использовать NVM. NVM - программа, чтобы переключаться между различными версиями Node.JS.
 
 ## Старт сервера
 
